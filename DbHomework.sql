@@ -59,3 +59,5 @@ CREATE TABLE movies_genres
     CONSTRAINT fk_movies FOREIGN KEY (movies_id) REFERENCES movies (movies_id),
     CONSTRAINT fk_genres FOREIGN KEY (genres_id) REFERENCES genres (genres_id)
 );
+
+UPDATE movies SET movies_name = concat(movies_name, ' (', extract(YEAR FROM movies_year), ')');
